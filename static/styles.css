@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f2f0ff; /* Светлый фиолетовый фон */
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #6a3dff; /* Фиолетовый цвет заголовков */
+}
+
+form {
+    margin: 10px 0;
+}
+
+label {
+    font-weight: bold;
+    color: #6a3dff; /* Фиолетовый цвет для меток */
+}
+
+input, textarea, button {
+    margin: 5px 0;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #dcd6f7; /* Легкая фиолетовая рамка для ввода */
+    border-radius: 5px;
+}
+
+button {
+    background-color: #6a3dff; /* Фиолетовая кнопка */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4b1dd5; /* Темный фиолетовый при наведении */
+}
+
+div {
+    border: 1px solid #dcd6f7; /* Легкая фиолетовая рамка для блоков */
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f1ebff; /* Светлый фиолетовый фон для списка */
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 3px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f0ff;
+    color: #333;
+}
+
+h1 {
+    color: #6a3dff;
+    margin-top: 80px; /*  Увеличен отступ сверху для заголовка */
+    text-align: center; /* Заголовок по центру */
+}
+
+/* Стили для кнопки возврата на главную */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #6a3dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.back-button:hover {
+    background-color: #4b1dd5;
+}
+
+/* Стили для карточек предохранителей */
+.fuse-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px; /*  Добавлен отступ сверху  */
+}
+
+.fuse-card {
+    background-color: #f1ebff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.fuse-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #6a3dff;
+}
+
+.fuse-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Стили для кнопки сохранения */
+.save-btn {
+    padding: 8px 16px;
+    background-color: #9b4dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: #7a2ce2;
+}
+
+    </style>
+</head>
+<body>
+
+    {% if fuses %}
+        <div class="fuse-container">
+            {% for fuse in fuses %}
+                <div class="fuse-card" id="fuse-{{ fuse.id }}">
+                    <h2>{{ fuse.name }}</h2>
+                    <p><strong>Цена:</strong> {{ fuse.price }} RUB</p>
+                    <p><strong>Типы:</strong> {{ fuse.types | join(', ') }}</p>
+
+                    <!-- Сохранение предохранителя в профиль -->
+                    <button class="save-btn" data-fuse-id="{{ fuse.id }}">Сохранить в профиль</button>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Предохранители не найдены по указанной цене.</p>
+    {% endif %}
+
+    <!-- Кнопка возврата на главную страницу -->
+    <a href="/" class="back-button">Вернуться на главную</a>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

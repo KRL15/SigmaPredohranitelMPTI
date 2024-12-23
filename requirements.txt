@@ -1,0 +1,7 @@
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.3
+psycopg2-binary==2.9.6
+requests==2.32.3
+bs4==0.0.2
+flask_pymongo==2.3.0
+bson==0.5.10
